@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-fetch-data',
@@ -9,7 +10,7 @@ export class FetchDataComponent {
   public listofcars: Warehouse[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Warehouse[]>("http://localhost:56576/" + 'api/WarehouseData/WarehouseCars').subscribe(result => {
+    http.get<Warehouse[]>(environment.apiEndPoint + 'api/WarehouseData/WarehouseCars').subscribe(result => {
       this.listofcars = result;
     }, error => console.error(error));
   }
