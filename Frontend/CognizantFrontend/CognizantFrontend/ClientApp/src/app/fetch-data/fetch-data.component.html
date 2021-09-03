@@ -13,6 +13,7 @@
           <thead>
             <tr>
               <th>ID</th>
+              <th>Warehouse</th>
               <th>Price</th>
               <th>Date Added</th>
               <th>Licensed</th>
@@ -21,6 +22,7 @@
           </thead>
           <tr *ngFor="let listofvec of listofcar.cars.vehicles">
             <td>{{ listofvec._id }}</td>
+            <td>{{ listofcar.name }}</td>
             <td>{{ listofvec.price }}</td>
             <td>{{ listofvec.date_added }}</td>
             <td>{{ listofvec.licensed }}</td>
